@@ -1,0 +1,19 @@
+{
+  "name": "history-scraper",
+  "version": "0.0.1",
+  "description": "Scrapes the history of a website using the Wayback Machine provided a custom cawler is provided.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "scraper",
+    "nodejs",
+    "history",
+    "wayback",
+    "machine",
+    "waybackmachine"
+  ],
+  "author": "Nakshatra Mukhopadhyay",
+  "license": "ISC"
+}
