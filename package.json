@@ -2,18 +2,32 @@
   "name": "history-scraper",
   "version": "0.0.1",
   "description": "Scrapes the history of a website using the Wayback Machine provided a custom cawler is provided.",
-  "main": "index.js",
+  "private": true,
   "scripts": {
+    "start": "node ./bin/www",
+    "start-debug": "DEBUG=history-scraper:* npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "scraper",
     "nodejs",
+    "javascript",
     "history",
     "wayback",
     "machine",
+    "wayback-machine",
     "waybackmachine"
   ],
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "morgan": "~1.8.1",
+    "pug": "~2.0.0-beta11",
+    "serve-favicon": "~2.4.2",
+    "stylus": "0.54.5"
+  },
   "author": "Nakshatra Mukhopadhyay",
   "license": "MIT"
 }
