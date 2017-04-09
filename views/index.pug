@@ -3,5 +3,12 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
-  input(type=text)
-  button(id="waybackify") Generate
+  form(id="waybackify-form")
+    div(class="form-group")
+      label(class="form-label" for="input-url") URL
+      input(class="form-input" id="input-url" type=text)
+    div(class="form-group")
+      label(class="form-label" for="input-time") Time
+      input(class="form-input" id="input-time" type=text)
+    div(class="form-group")
+      button(class="form-btn" id="waybackify-btn") Generate
