@@ -1,3 +1,5 @@
+// @flow
+
 import express from 'express'
 var router = express.Router()
 
@@ -7,7 +9,7 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req) => {
-  let waybackifiedUrl = req.body.waybackifiedUrl
+  let waybackifiedUrl: string = req.body.waybackifiedUrl
   console.log(waybackifiedUrl)
 })
 

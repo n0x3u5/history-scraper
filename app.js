@@ -1,3 +1,5 @@
+// @flow
+
 import express from 'express'
 import path from 'path'
 import logger from 'morgan'
@@ -25,14 +27,14 @@ app.use('/', index)
 app.use('/users', users)
 
 // catch 404 and forward to error handler
-app.use((req, res, next) => {
-  let err = new Error('Not Found')
+app.use((req: Object, res: Object, next: (err: {status?: number}) => void) => {
+  let err: {status?: number} = new Error('Not Found')
   err.status = 404
   next(err)
 })
 
 // error handler
-app.use((err, req, res) => {
+app.use((err: Error, req: Object, res: Object) => {
   // set locals, only providing error in development
   res.locals.message = err.message
   res.locals.error = req.app.get('env') === 'development' ? err : {}
