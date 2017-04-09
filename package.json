@@ -4,8 +4,9 @@
   "description": "Scrapes the history of a website using the Wayback Machine provided a custom cawler is provided.",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
-    "start-debug": "DEBUG=history-scraper:* npm start",
+    "start": "yarn dev:start",
+    "dev:start": "nodemon --config nodemon.json --exec babel-node ./bin/www",
+    "start-debug": "DEBUG=history-scraper:* yarn start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -32,6 +33,7 @@
   "author": "Nakshatra Mukhopadhyay",
   "license": "MIT",
   "devDependencies": {
-    "babel-cli": "^6.24.1"
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.3.3"
   }
 }
