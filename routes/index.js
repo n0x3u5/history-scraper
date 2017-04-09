@@ -1,14 +1,14 @@
-import express from 'express';
-var router = express.Router();
+import express from 'express'
+var router = express.Router()
 
 /* GET home page. */
 router.get('/', (req, res) => {
-  res.render('index', { title: 'History Scraper' });
-});
+  res.render('index', { title: 'History Scraper' })
+})
 
 router.post('/', (req) => {
-  let waybackifiedUrl = req.body.waybackifiedUrl;
-  console.log(waybackifiedUrl);
-});
+  let waybackifiedUrl = req.body.waybackifiedUrl
+  console.log(waybackifiedUrl)
+})
 
-export default router;
+export default router

@@ -1,0 +1,20 @@
+{
+  "extends": "standard",
+  "plugins": [
+    "standard",
+    "promise",
+    "compat"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "shared-node-browser": true,
+    "es6": true,
+    "worker": true,
+    "serviceworker": true
+  },
+  "rules": {
+    "no-unexpected-multiline": "error",
+    "compat/compat": "error"
+  }
+}
