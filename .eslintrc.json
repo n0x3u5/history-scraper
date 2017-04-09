@@ -1,4 +1,5 @@
 {
+  "parser": "babel-eslint",
   "extends": [
     "standard",
     "plugin:flowtype/recommended"
@@ -14,6 +15,7 @@
     "node": true,
     "shared-node-browser": true,
     "es6": true,
+    "jest": true,
     "worker": true,
     "serviceworker": true
   },

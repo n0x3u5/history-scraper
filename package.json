@@ -10,7 +10,9 @@
     "start": "yarn dev:start",
     "dev:start": "nodemon --config nodemon.json --exec babel-node ./bin/www",
     "start-debug": "DEBUG=history-scraper:* yarn start",
-    "test": "eslint bin/www routes/**/*.js app.js src && flow"
+    "test": "eslint bin/www routes/**/*.js app.js src && flow && jest --coverage",
+    "precommit": "yarn test",
+    "prepush": "yarn test"
   },
   "keywords": [
     "scraper",
@@ -38,6 +40,7 @@
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.1",
+    "babel-jest": "^19.0.0",
     "babel-preset-env": "^1.3.3",
     "babel-preset-flow": "^6.23.0",
     "eslint": "^3.19.0",
@@ -48,6 +51,8 @@
     "eslint-plugin-node": "^4.2.2",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
-    "flow-bin": "^0.43.1"
+    "flow-bin": "^0.43.1",
+    "husky": "^0.13.3",
+    "jest": "^19.0.2"
   }
 }

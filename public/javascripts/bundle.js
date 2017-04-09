@@ -1,9 +1,9 @@
 // @flow
 
 window.onload = function (): void {
-  var inputUrlElement = document.getElementById('input-url')
-  var inputTimeElement = document.getElementById('input-time')
-  var waybackifyBtn = document.getElementById('waybackify-btn')
+  var inputUrlElement: HTMLElement | null = document.getElementById('input-url')
+  var inputTimeElement: HTMLElement | null = document.getElementById('input-time')
+  var waybackifyBtn: HTMLElement | null = document.getElementById('waybackify-btn')
 
   if (!inputUrlElement || !waybackifyBtn || !inputTimeElement) {
     return
@@ -22,17 +22,21 @@ window.onload = function (): void {
   }
 
   function postUrl (url: string): void {
-    var req = new XMLHttpRequest()
+    var req: XMLHttpRequest = new XMLHttpRequest()
     req.open('POST', '/', true)
     req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
     req.send(`waybackifiedUrl=${encodeURIComponent(url)}`)
   }
 
-  function handleWaybackifyClick (evt: MouseEvent): void {
-    var waybackifiedUrl = ''
+  function sanitizeEvent (evt: Event): $Subtype<Event> {
+    return !evt ? window.event : evt
+  }
 
-    evt = evt || window.event
-    evt && evt.preventDefault()
+  function handleWaybackifyClick (evt: MouseEvent): void {
+    var waybackifiedUrl: string = ''
+    var e: MouseEvent = sanitizeEvent(evt)
+
+    e.preventDefault()
 
     if (inputUrlElement instanceof HTMLInputElement &&
       inputTimeElement instanceof HTMLInputElement) {
@@ -43,9 +47,10 @@ window.onload = function (): void {
   }
 
   function handleReturnPress (evt: KeyboardEvent): void {
-    evt = evt || window.event
-    var keyCode = evt && (evt.keyCode || evt.which)
-    if (keyCode && keyCode === 13) {
+    var e: KeyboardEvent = sanitizeEvent(evt)
+    var keyCode: number = e.keyCode || e.which
+
+    if (keyCode === 13) {
       waybackifyBtn && waybackifyBtn.click()
     }
   }
