@@ -1,10 +1,10 @@
 // @flow
 
 import express from 'express'
-var router = express.Router()
+var router: Object = express.Router()
 
 /* GET users listing. */
-router.get('/', (req, res) => {
+router.get('/', (req: Object, res: Object) => {
   res.send('respond with a resource')
 })
 

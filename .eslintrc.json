@@ -10,6 +10,9 @@
     "compat",
     "flowtype"
   ],
+  "settings": {
+    "polyfills": ["fetch"]
+  },
   "env": {
     "browser": true,
     "node": true,

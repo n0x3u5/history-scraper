@@ -223,3 +223,6 @@ bower_components/
 build/
 
 # End of https://www.gitignore.io/api/web,vim,node,macos,linux,emacs,yeoman,windows,sublimetext
+
+/lib/
+/dist/
